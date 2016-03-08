@@ -259,7 +259,7 @@ class TableViewController: UITableViewController, UIAlertViewDelegate {
         }
     }
     
-    /*
+    
     override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0{
             let hexPath = "\(documentsPath)/ColorHex.plist"
@@ -273,9 +273,9 @@ class TableViewController: UITableViewController, UIAlertViewDelegate {
         alert.addButtonWithTitle("好")
         alert.show()
     }
-    */
     
-    /*
+    
+    
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if buttonIndex == 1{
             if detectDeepColor(themeHex as String){
@@ -291,7 +291,7 @@ class TableViewController: UITableViewController, UIAlertViewDelegate {
             
         }
     }
-    */
+
     
     //重载默认按钮文字
     override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String! {
@@ -349,13 +349,15 @@ class TableViewController: UITableViewController, UIAlertViewDelegate {
         }
         
     }
-    
+    /*
     @IBAction func cellLongPress(sender: UILongPressGestureRecognizer) {
         print("longpress!")
         var menu = UIMenuController()
-        menu.menuItems = [UIMenuItem(title: "设置", action: "setColor")]
+        menu.menuItems = [UIMenuItem(title: "设置", action: "setColor:")]
         menu.setMenuVisible(true, animated: true)
     }
+*/
+    /*
     override func tableView(tableView: UITableView, shouldShowMenuForRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         let hexPath = "\(documentsPath)/ColorHex.plist"
         let fileManager = NSFileManager.defaultManager()
@@ -380,6 +382,8 @@ class TableViewController: UITableViewController, UIAlertViewDelegate {
             }
         }
     }
+*/
+    /*
     override func tableView(tableView: UITableView, canPerformAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject) -> Bool {
         if action == Selector("copy:"){
             let hexPath = "\(documentsPath)/ColorHex.plist"
@@ -418,6 +422,7 @@ class TableViewController: UITableViewController, UIAlertViewDelegate {
         var firstview = storyboard?.instantiateViewControllerWithIdentifier("firstview") as! ViewController
         firstview.navigationController?.navigationBar.barTintColor = showColor(themeHex as String)
     }
+*/
     
     /*
     // MARK: - Navigation

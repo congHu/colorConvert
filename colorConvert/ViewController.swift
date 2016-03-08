@@ -56,7 +56,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UIActionSheetDelega
         var themeHex = themeColor?.objectAtIndex(0) as! String
         navigationController?.navigationBar.barTintColor = convertReturnColorOnly(themeHex)
         
-        
+        preferredStatusBarStyle()
         
     }
     override func didReceiveMemoryWarning() {
@@ -304,6 +304,9 @@ class ViewController: UIViewController, UIAlertViewDelegate, UIActionSheetDelega
         }
         if blueInput.text == ""{
             blueInput.text = "0"
+        }
+        if hexValue.text == ""{
+            hexValue.text = historyHex1
         }
         hexValue.resignFirstResponder()
         redInput.resignFirstResponder()
