@@ -215,6 +215,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="aColor" destination="3nq-Ok-HTd" id="vTm-Lh-PcD"/>
+                        <outlet property="addBookmark" destination="FkJ-Gw-c5q" id="flP-qC-o5K"/>
                         <outlet property="bColor" destination="Kdj-xY-dgy" id="7T6-ih-BfO"/>
                         <outlet property="blueInput" destination="hXY-Jl-c7X" id="UnO-6S-8XW"/>
                         <outlet property="blueStp" destination="5T3-1O-5Aw" id="ntI-Ia-Jcg"/>

@@ -76,6 +76,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UIActionSheetDelega
     @IBOutlet var currentLabel: UILabel!
     @IBOutlet var clearItem: UIBarButtonItem!
     @IBOutlet var bookmarkItem: UIBarButtonItem!
+    @IBOutlet var addBookmark: UIBarButtonItem!
     
     func convertA(var hex:String){
         var strArray:[Int] = []
@@ -125,6 +126,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UIActionSheetDelega
         sender.text = sender.text.uppercaseString
         if count(sender.text) < 6{
             sender.textColor = UIColor.grayColor()
+            addBookmark.enabled = false
         }else{
             if count(sender.text) == 6{
                 var hexError = false
@@ -134,6 +136,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UIActionSheetDelega
                     }else{
                         hexError = true
                         sender.textColor = UIColor.redColor()
+                        addBookmark.enabled = false
                         break
                     }
                 }
@@ -141,10 +144,12 @@ class ViewController: UIViewController, UIAlertViewDelegate, UIActionSheetDelega
                     convertA(sender.text)
                     historyHex0 = historyHex1
                     historyHex1 = sender.text
+                    addBookmark.enabled = true
                 }
             }else{
                 if count(sender.text) > 6{
                     sender.textColor = UIColor.redColor()
+                    addBookmark.enabled = false
                 }
             }
         }
@@ -180,6 +185,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UIActionSheetDelega
                 redInput.textColor = UIColor.whiteColor()
                 convertBack()
                 redStp.value = Double(redInput.text.toInt()!)
+                
             }else{
                 redInput.textColor = UIColor.redColor()
             }
@@ -307,6 +313,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UIActionSheetDelega
         }
         if hexValue.text == ""{
             hexValue.text = historyHex1
+            addBookmark.enabled = true
         }
         hexValue.resignFirstResponder()
         redInput.resignFirstResponder()
